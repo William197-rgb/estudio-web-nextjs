@@ -1,0 +1,31 @@
+{
+  "name": "web-estudio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/flatten-segments.mjs",
+    "start": "next start",
+    "lint": "eslint",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@remotion/player": "4.0.534",
+    "@remotion/transitions": "4.0.534",
+    "gsap": "^3.15.0",
+    "next": "^16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.4.3",
+    "typescript": "^5",
+    "wrangler": "^4.152.0"
+  }
+}
