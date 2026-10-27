@@ -4,30 +4,39 @@ Sitio de mi estudio de páginas web para negocios de Paraguay, hecho con **Next.
 
 **En vivo:** https://william-acosta-web.web-estudio.workers.dev
 
-*English: the website of my web design studio for small businesses in Paraguay. Next.js 16 static export, React 19, TypeScript, GSAP animations and an embedded Remotion video player, deployed on Cloudflare Workers.*
+*English: the website of my web design studio for small businesses in Paraguay. Next.js 16 static export, React 19, TypeScript, a live "build your site" demo, GSAP animations and an embedded Remotion video player, deployed on Cloudflare Workers.*
+
+![Portada del sitio en computadora y celular](docs/portada.jpg)
 
 ## Qué tiene
 
-- **Portada animada con GSAP**: letrero de neón y reloj en vivo con la hora de Paraguay.
-- **Animación ligada al scroll** (ScrollTrigger) que muestra cómo se reconstruye una web caída, pieza por pieza.
-- **Ejemplos por rubro** (`/rubros/[rubro]`) con su propia maqueta y transiciones entre páginas.
-- **Video promocional personalizable** hecho con Remotion y reproducido dentro de la web con `@remotion/player`: escribís el nombre de un negocio y el video lo usa.
-- **Páginas por ciudad** (`/diseno-web/[ciudad]`) y sección de precios, generadas desde datos en `src/data/`.
+- **Portada con ejemplos en vivo**: una laptop y un celular muestran webs de ejemplo; el celular marca "Abierto" o "Cerrado" según la hora real de Paraguay.
+- **"Arme su web en 30 segundos"**: el visitante escribe el nombre de su negocio, elige qué necesita (turnos, pedidos por WhatsApp, urgencias, horarios, Google) y un celular arma esa web en el momento. El resultado se manda por WhatsApp o se comparte como enlace (`?negocio=...#demo`) que abre la demo ya personalizada.
+- **Animación ligada al scroll** (GSAP ScrollTrigger) que muestra cómo se reconstruye una web caída, pieza por pieza.
+- **Video promocional personalizable** hecho con Remotion y reproducido dentro de la web con `@remotion/player`.
+- **Páginas por rubro y por ciudad** (`/rubros/[rubro]`, `/diseno-web/[ciudad]`) y sección de precios, generadas desde datos en `src/data/`.
 - **SEO técnico**: `sitemap.ts`, `robots.ts`, datos estructurados JSON-LD y metadatos por página.
 
-## Calidad
+![Arme su web: la vista previa se arma en vivo](docs/arme-su-web.jpg)
 
-Google Lighthouse en celular: **100 en accesibilidad, 100 en buenas prácticas y 100 en SEO**.
+## Calidad y rendimiento
+
+Google Lighthouse en celular, sobre el sitio publicado (mediana de 3 corridas): **88 en rendimiento, 100 en accesibilidad, 100 en buenas prácticas y 100 en SEO**, sin desplazamientos de diseño (CLS 0).
+
+- La portada se renderiza en el servidor; solo el reloj y el celular de ejemplo se hidratan, y la entrada es una animación CSS.
+- GSAP se descarga recién cuando el navegador está libre, y las entradas por sección usan `IntersectionObserver` en lugar de un disparador de scroll por elemento.
+- Las fuentes de los ejemplos se cargan al acercarse (`content-visibility`), así no compiten con el primer pintado.
 
 ## Estructura
 
 ```
 src/
   app/          rutas (portada, /rubros/[rubro], /diseno-web/[ciudad]), sitemap y robots
-  components/   secciones de la página (Hero, Rebuild, Pricing, AdStudio, ...)
+  components/   secciones de la página (Hero, Builder, Rebuild, Pricing, AdStudio, ...)
   remotion/     composición del video promocional
   data/         contenido: rubros, ciudades, precios, datos de contacto
-  lib/gsap.ts   registro de plugins de GSAP
+  lib/gsap.ts   carga diferida de GSAP (useIdleGsap)
+PRODUCT.md, DESIGN.md   producto y sistema de diseño (tokens, componentes, reglas)
 scripts/flatten-segments.mjs   ajuste posterior al build para la exportación estática
 worker.js       worker de Cloudflare que sirve los archivos estáticos
 ```
