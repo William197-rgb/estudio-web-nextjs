@@ -8,10 +8,11 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="wrap">
+        <p className="footer-name">{OWNER}</p>
         <div className="footer-grid">
           <div>
-            <b>{OWNER}</b>
-            <p>Páginas web para negocios, desde Central, Paraguay.</p>
+            <b>Páginas web para negocios</b>
+            <p>Desde Central, para todo Paraguay.</p>
             <p>
               WhatsApp:{" "}
               <a href={whatsappHref("Hola, William. Me interesa una página web para mi negocio.") ?? "#contacto"}>
@@ -20,7 +21,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <p>Trabajo con negocios de Asunción y de todo el departamento Central:</p>
+            <p>Trabajo a distancia con negocios de todo el país. Algunas de las ciudades donde atiendo:</p>
             <ul className="cities">
               {CITIES.map((city) => {
                 const slug = CITY_PAGES.get(city);

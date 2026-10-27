@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useRef, useSyncExternalStore } from "react";
+import { RubroMock } from "@/components/RubroMock";
+import { getRubro, RUBROS } from "@/data/rubros";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 type Clock = { time: string; open: boolean };
@@ -42,6 +44,9 @@ function parseClock(snapshot: string): Clock | null {
   return { time, open: state === "open" };
 }
 
+const desk = RUBROS[0];
+const phone = getRubro("veterinaria") ?? RUBROS[1];
+
 export function Hero() {
   const root = useRef<HTMLElement>(null);
   // The real time only exists in the browser; the server renders the neutral line.
@@ -51,65 +56,85 @@ export function Hero() {
     () => {
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // The one page-load moment: the sign stutters on like a real neon tube.
-        const tl = gsap.timeline({ defaults: { ease: "none" } });
-        tl.from(".sign-word", { opacity: 0.08, duration: 0.05 })
-          .to(".sign-word", { opacity: 0.25, duration: 0.06 }, "+=0.18")
-          .to(".sign-word", { opacity: 1, duration: 0.04 }, "+=0.08")
-          .to(".sign-word", { opacity: 0.4, duration: 0.05 }, "+=0.22")
-          .to(".sign-word", { opacity: 1, duration: 0.05 }, "+=0.06")
-          // Only movement on the headline: it is the LCP element, so it must never start invisible.
-          .from(".hero-line", { y: 28, duration: 0.8, stagger: 0.12, ease: "power3.out" }, 0.05);
+        // The one page-load moment. Nothing starts invisible: the headline is the LCP element,
+        // and the devices only settle into place from slightly lower.
+        gsap
+          .timeline({ defaults: { ease: "expo.out" } })
+          .from(".hero-line", { y: 28, duration: 0.9, stagger: 0.1 }, 0)
+          .from(".device-laptop", { y: 36, duration: 1.2 }, 0.05)
+          .from(".device-phone", { y: 64, duration: 1.3 }, 0.15);
       });
     },
     { scope: root },
   );
 
+  const status = clock
+    ? clock.open
+      ? { open: true, label: "Abierto ahora" }
+      : { open: false, label: "Cerrado · le respondemos por WhatsApp" }
+    : undefined;
+
   return (
     <section className="hero" ref={root} aria-labelledby="hero-title">
       <div className="wrap hero-grid">
-        <div>
-          <h1 id="hero-title">
-            <span className="hero-line">Su local cierra.</span>
-            <span className="hero-line">Su web sigue atendiendo.</span>
-          </h1>
-          <p className="hero-clock" aria-live="polite">
-            {clock === null ? (
-              "En Central, a cualquier hora del día."
-            ) : clock.open ? (
-              <>
-                Son las <time>{clock.time}</time> en Central. Mientras usted atiende el mostrador, su web responde
-                a los que preguntan desde el celular.
-              </>
-            ) : (
-              <>
-                Son las <time>{clock.time}</time> en Central. Su local ya cerró; con una buena web, sus clientes
-                igual pueden escribirle y pedir turno.
-              </>
-            )}
-          </p>
+        <h1 id="hero-title">
+          <span className="hero-line">Su local cierra.</span>
+          <span className="hero-line">Su web sigue atendiendo.</span>
+        </h1>
+        <div className="hero-copy">
           <p className="hero-lede">
-            Hago páginas web para negocios de Asunción y Central: rápidas en el celular, con WhatsApp a un toque y
-            fáciles de encontrar en Google.
+            Hago páginas web para negocios de todo Paraguay: rápidas en el celular, con WhatsApp a un toque y fáciles
+            de encontrar en Google.
           </p>
           <div className="hero-actions">
-            <Link href="#contacto" className="btn btn-primary">
+            <Link href="#contacto" className="btn btn-primary btn-arrow">
               Pedir mi propuesta
             </Link>
-            <Link href="#reconstruccion" className="btn btn-ghost">
-              Ver cómo trabajo
+            <Link href="#rubros" className="btn btn-ghost">
+              Ver ejemplos
             </Link>
           </div>
+          <p className="hero-clock" aria-live="polite">
+            {clock === null ? (
+              <span>Su web atiende a cualquier hora del día.</span>
+            ) : clock.open ? (
+              <span>
+                Son las <time>{clock.time}</time> en Paraguay. Mientras usted atiende el mostrador, su web responde a los
+                que preguntan desde el celular.
+              </span>
+            ) : (
+              <span>
+                Son las <time>{clock.time}</time> en Paraguay. Su local ya cerró; con una buena web, sus clientes igual
+                pueden escribirle y pedir turno.
+              </span>
+            )}
+          </p>
         </div>
-        <div className="sign-wrap" aria-hidden="true">
-          <div className="sign-cords" />
-          <div className="sign">
-            <div className="sign-word">ABIERTO</div>
-            <p className="sign-hours">
-              <b>las 24 horas</b>, también domingos
-            </p>
+        <figure className="hero-devices">
+          <div
+            className="hero-stage"
+            role="img"
+            aria-label={`Ejemplos de páginas web: ${desk.business} en una computadora y ${phone.business} en un celular`}
+          >
+            <div className="device-laptop">
+              <div className="device-bar" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <span className="device-url">odontologiapora.com.py</span>
+              </div>
+              <div className="device-screen">
+                <RubroMock rubro={desk} />
+              </div>
+            </div>
+            <div className="device-phone">
+              <div className="device-screen">
+                <RubroMock rubro={phone} status={status} />
+              </div>
+            </div>
           </div>
-        </div>
+          <figcaption>Ejemplos: negocios ficticios, webs como las que entrego.</figcaption>
+        </figure>
       </div>
     </section>
   );

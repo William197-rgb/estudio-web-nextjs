@@ -31,7 +31,7 @@ const ContactSceneInner: React.FC<ContactSceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#3D6BF2",
+        backgroundColor: "#0A7D55",
         fontFamily: bodyFont,
         ...style,
       }}
@@ -77,7 +77,7 @@ const ContactSceneInner: React.FC<ContactSceneProps> = ({
           backgroundColor: "#FFFFFF",
           borderRadius: 999,
           padding: "42px 40px",
-          color: "#0E1320",
+          color: "#0E1A16",
           fontWeight: 700,
           fontSize: 54,
           opacity: interpolate(frame, [14, 24], [0, 1], {

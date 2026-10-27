@@ -44,7 +44,7 @@ export function AdStudio() {
   }, []);
 
   return (
-    <section id="anuncio" className="section section-night" aria-labelledby="anuncio-title">
+    <section id="anuncio" className="section section-tint" aria-labelledby="anuncio-title">
       <div className="wrap ad-grid">
         <div>
           <div className="section-head">

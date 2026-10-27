@@ -63,11 +63,11 @@ async function RubroContent({ params }: { params: Params }) {
                 {rubro.features.map((feature) => (
                   <li key={feature}>
                     <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true">
-                      <circle cx="24" cy="24" r="22" fill="#25d366" />
+                      <circle cx="24" cy="24" r="22" fill="#0a7d55" />
                       <path
                         d="M14 25l7 7 13-15"
                         fill="none"
-                        stroke="#06301a"
+                        stroke="#ffffff"
                         strokeWidth="5"
                         strokeLinecap="round"
                         strokeLinejoin="round"

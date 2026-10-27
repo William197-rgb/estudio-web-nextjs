@@ -5,13 +5,18 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="wrap">
-        <Link href="/" className="wordmark" aria-label={`${OWNER}, inicio`}>
-          <b>{OWNER}</b>
-          <span>Páginas web para negocios</span>
+        <Link href="/" className="wordmark">
+          <span className="wordmark-mark" aria-hidden="true">
+            W
+          </span>
+          <span>
+            <b>{OWNER}</b>
+            <small>Páginas web para negocios</small>
+          </span>
         </Link>
         <nav className="site-nav" aria-label="Secciones">
           <Link href="/#reconstruccion">Cómo trabajo</Link>
-          <Link href="/#rubros">Rubros</Link>
+          <Link href="/#rubros">Ejemplos</Link>
           <Link href="/#anuncio">Su anuncio</Link>
           <Link href="/#proceso">Proceso</Link>
           <Link href="/#precios">Precios</Link>

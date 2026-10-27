@@ -24,7 +24,7 @@ type SolutionSceneProps = {
 const CheckIcon: React.FC = () => (
   <svg width="64" height="64" viewBox="0 0 48 48" style={{ flex: "none" }}>
     <circle cx="24" cy="24" r="22" fill="#25D366" />
-    <path d="M 14 25 L 21 32 L 34 17" fill="none" stroke="#0E1320" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M 14 25 L 21 32 L 34 17" fill="none" stroke="#0E1A16" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -44,7 +44,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#0E1320",
+        backgroundColor: "#0E1A16",
         fontFamily: bodyFont,
         ...style,
       }}
@@ -61,7 +61,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           fontSize: 88,
           lineHeight: 1.02,
           letterSpacing: "-0.02em",
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           opacity: interpolate(frame, [0, 12], [0, 1], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
@@ -69,7 +69,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
         }}
       >
         {title}
-        <span style={{ display: "block", color: "#5B8BFF" }}>{highlight}</span>
+        <span style={{ display: "block", color: "#5FD3A4" }}>{highlight}</span>
       </Interactive.Div>
 
       <Interactive.Div
@@ -80,8 +80,8 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           width: 620,
           top: 420,
           height: 860,
-          backgroundColor: "#F3F5F9",
-          border: "14px solid #232B3D",
+          backgroundColor: "#F4F6F5",
+          border: "14px solid #1F302A",
           borderRadius: 64,
           overflow: "hidden",
           display: "flex",
@@ -118,21 +118,21 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: "#4C7DFF" }} />
-            <div style={{ fontFamily: displayFont, fontWeight: 800, fontSize: 36, color: "#0E1320" }}>
+            <div style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: "#0A7D55" }} />
+            <div style={{ fontFamily: displayFont, fontWeight: 800, fontSize: 36, color: "#0E1A16" }}>
               {businessName}
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-            <div style={{ width: 38, height: 5, borderRadius: 3, backgroundColor: "#0E1320" }} />
-            <div style={{ width: 38, height: 5, borderRadius: 3, backgroundColor: "#0E1320" }} />
-            <div style={{ width: 38, height: 5, borderRadius: 3, backgroundColor: "#0E1320" }} />
+            <div style={{ width: 38, height: 5, borderRadius: 3, backgroundColor: "#0E1A16" }} />
+            <div style={{ width: 38, height: 5, borderRadius: 3, backgroundColor: "#0E1A16" }} />
+            <div style={{ width: 38, height: 5, borderRadius: 3, backgroundColor: "#0E1A16" }} />
           </div>
         </div>
 
         <div
           style={{
-            backgroundColor: "#4C7DFF",
+            backgroundColor: "#0A7D55",
             borderRadius: 28,
             padding: "56px 38px",
             color: "#FFFFFF",
@@ -163,7 +163,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
             backgroundColor: "#25D366",
             borderRadius: 999,
             padding: "28px 24px",
-            color: "#0E1320",
+            color: "#0E1A16",
             fontWeight: 700,
             fontSize: 30,
             whiteSpace: "nowrap",
@@ -180,7 +180,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           }}
         >
           <svg width="40" height="40" viewBox="0 0 24 24">
-            <path d="M 12 3 A 9 9 0 0 0 4.2 16.5 L 3 21 L 7.6 19.8 A 9 9 0 1 0 12 3 Z" fill="none" stroke="#0E1320" strokeWidth="2" strokeLinejoin="round" />
+            <path d="M 12 3 A 9 9 0 0 0 4.2 16.5 L 3 21 L 7.6 19.8 A 9 9 0 1 0 12 3 Z" fill="none" stroke="#0E1A16" strokeWidth="2" strokeLinejoin="round" />
           </svg>
           {whatsappLabel}
         </div>
@@ -201,17 +201,17 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           }}
         >
           <div style={{ flex: 1, backgroundColor: "#FFFFFF", borderRadius: 24, padding: "26px 24px", display: "flex", flexDirection: "column", gap: 10 }}>
-            <div style={{ fontWeight: 700, fontSize: 30, color: "#0E1320" }}>Horarios</div>
-            <div style={{ fontSize: 26, color: "#586070", lineHeight: 1.3 }}>
+            <div style={{ fontWeight: 700, fontSize: 30, color: "#0E1A16" }}>Horarios</div>
+            <div style={{ fontSize: 26, color: "#55655F", lineHeight: 1.3 }}>
               Lun a sáb
               <br />8 a 18 h
             </div>
           </div>
           <div style={{ flex: 1, backgroundColor: "#FFFFFF", borderRadius: 24, padding: "26px 24px", display: "flex", flexDirection: "column", gap: 10 }}>
-            <div style={{ fontWeight: 700, fontSize: 30, color: "#0E1320" }}>Cómo llegar</div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 26, color: "#586070" }}>
+            <div style={{ fontWeight: 700, fontSize: 30, color: "#0E1A16" }}>Cómo llegar</div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 26, color: "#55655F" }}>
               <svg width="26" height="26" viewBox="0 0 24 24">
-                <path d="M 12 22 C 12 22 19 14.5 19 9.5 A 7 7 0 0 0 5 9.5 C 5 14.5 12 22 12 22 Z" fill="#FF5C4D" />
+                <path d="M 12 22 C 12 22 19 14.5 19 9.5 A 7 7 0 0 0 5 9.5 C 5 14.5 12 22 12 22 Z" fill="#FF6B5B" />
                 <circle cx="12" cy="9.5" r="2.6" fill="#FFFFFF" />
               </svg>
               Ver mapa
@@ -230,7 +230,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 28,
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           fontSize: 50,
           fontWeight: 500,
           opacity: interpolate(frame, [72, 82], [0, 1], {
@@ -257,7 +257,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 28,
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           fontSize: 50,
           fontWeight: 500,
           opacity: interpolate(frame, [86, 96], [0, 1], {
@@ -284,7 +284,7 @@ const SolutionSceneInner: React.FC<SolutionSceneProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 28,
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           fontSize: 50,
           fontWeight: 500,
           opacity: interpolate(frame, [100, 110], [0, 1], {

@@ -46,3 +46,9 @@ next-env.d.ts
 # notas locales para agentes
 AGENTS.md
 CLAUDE.md
+
+# impeccable / taste-skill working files
+.impeccable/decision/
+.impeccable/questions/
+.impeccable/review/
+.taste-skill/

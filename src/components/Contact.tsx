@@ -107,7 +107,19 @@ export function Contact() {
           <div className="chat-body">
             <p className="bubble">
               {message}
-              <span className="bubble-meta">{time} ✓✓</span>
+              <span className="bubble-meta">
+                {time}
+                <svg width="16" height="11" viewBox="0 0 16 11" aria-hidden="true">
+                  <path
+                    d="M1 6l3 3 6-7M6 8l1 1 6-7"
+                    fill="none"
+                    stroke="#53bdeb"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </p>
           </div>
         </figure>

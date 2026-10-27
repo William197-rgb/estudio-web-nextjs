@@ -6,6 +6,7 @@ import { Pricing } from "@/components/Pricing";
 import { Process } from "@/components/Process";
 import { Proof } from "@/components/Proof";
 import { Rebuild } from "@/components/Rebuild";
+import { Reveals } from "@/components/Reveals";
 import { RubrosGrid } from "@/components/RubrosGrid";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <Pricing />
         <Proof />
         <Contact />
+        <Reveals />
       </main>
     </ViewTransition>
   );

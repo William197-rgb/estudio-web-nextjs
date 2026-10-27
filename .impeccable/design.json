@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T12:00:00-03:00",
+  "title": "Design System: William Acosta, diseño web",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#e8edeb", "#f4f6f5", "#ffffff"] },
+      "tint": { "role": "neutral", "displayName": "Tint", "canonical": "#f4f6f5", "tonalRamp": ["#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#e8edeb", "#f4f6f5", "#fafbfb"] },
+      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#e8edeb", "tonalRamp": ["#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#c9d3cf", "#e8edeb", "#f4f6f5", "#fafbfb"] },
+      "ink": { "role": "neutral", "displayName": "Forest Ink", "canonical": "#0e1a16", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "ink-muted": { "role": "neutral", "displayName": "Moss Gray", "canonical": "#44524d", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "accent": { "role": "primary", "displayName": "Counter Green", "canonical": "#0a7d55", "tonalRamp": ["#04291b", "#064330", "#086a48", "#0a7d55", "#2f9a72", "#6dbb9a", "#aed9c6", "#e3f2ec"] },
+      "accent-hover": { "role": "primary", "displayName": "Pressed Green", "canonical": "#086a48", "tonalRamp": ["#04291b", "#064330", "#086a48", "#0a7d55", "#2f9a72", "#6dbb9a", "#aed9c6", "#e3f2ec"] },
+      "accent-soft": { "role": "primary", "displayName": "Halo Green", "canonical": "#e3f2ec", "tonalRamp": ["#04291b", "#064330", "#086a48", "#0a7d55", "#2f9a72", "#6dbb9a", "#aed9c6", "#e3f2ec"] },
+      "night": { "role": "neutral", "displayName": "Night", "canonical": "#0e1a16", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "night-raised": { "role": "neutral", "displayName": "Night Raised", "canonical": "#172720", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "night-line": { "role": "neutral", "displayName": "Night Line", "canonical": "#2a3b34", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "on-night": { "role": "neutral", "displayName": "On Night", "canonical": "#eef3f1", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "on-night-muted": { "role": "neutral", "displayName": "On Night Muted", "canonical": "#a7b7b0", "tonalRamp": ["#0e1a16", "#172720", "#2a3b34", "#44524d", "#6b7a74", "#a7b7b0", "#d3dcd8", "#eef3f1"] },
+      "on-night-accent": { "role": "secondary", "displayName": "Night Mint", "canonical": "#5fd3a4", "tonalRamp": ["#0b3324", "#145a3f", "#1f8360", "#33a97e", "#5fd3a4", "#8fe1c0", "#c0eedb", "#e8f9f1"] },
+      "dead-signal": { "role": "tertiary", "displayName": "Dead Link Coral", "canonical": "#ff6b5b", "tonalRamp": ["#4a1610", "#7a241a", "#b23a2b", "#e0503f", "#ff6b5b", "#ff9a8e", "#ffc6bf", "#ffeeec"] },
+      "field-stroke": { "role": "neutral", "displayName": "Field Stroke", "canonical": "#c9d3cf", "tonalRamp": ["#2a3b34", "#44524d", "#6b7a74", "#9fb0a9", "#c9d3cf", "#e8edeb", "#f4f6f5", "#fafbfb"] },
+      "field-stroke-hover": { "role": "neutral", "displayName": "Field Stroke Hover", "canonical": "#9fb0a9", "tonalRamp": ["#2a3b34", "#44524d", "#6b7a74", "#9fb0a9", "#c9d3cf", "#e8edeb", "#f4f6f5", "#fafbfb"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only (one sentence per line, full container width); the footer name reuses it." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2s and the h1 of rubro and city pages." },
+      "title": { "displayName": "Title", "purpose": "Process step titles and city subtitles." },
+      "title-sm": { "displayName": "Title Small", "purpose": "Card titles: example cards and price cards." },
+      "lede": { "displayName": "Lede", "purpose": "Paragraph under a heading, Moss Gray, 40 to 56ch." },
+      "body": { "displayName": "Body", "purpose": "Running text, 46 to 70ch." },
+      "label": { "displayName": "Label", "purpose": "Captions, notes, field hints, meta lines." },
+      "button": { "displayName": "Button", "purpose": "Every button label." }
+    },
+    "shadows": [
+      { "name": "float", "value": "0 30px 60px -28px rgb(14 26 22 / 0.35), 0 8px 18px -10px rgb(14 26 22 / 0.18)", "purpose": "Floating devices (phone, ad player), the chat preview, and example cards on hover." },
+      { "name": "float-edge", "value": "0 30px 60px -28px rgb(14 26 22 / 0.35), 0 8px 18px -10px rgb(14 26 22 / 0.18), 0 0 0 1px rgb(14 26 22 / 0.08)", "purpose": "White laptop and hero mock frames on a white ground." },
+      { "name": "night-float", "value": "0 40px 80px -30px rgb(0 0 0 / 0.55)", "purpose": "The browser frame on the dark rebuild stage." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Movement: button nudge, arrow slide, card lift." },
+      { "name": "control-state", "value": "160ms ease", "purpose": "Button color and stroke changes; nav and field color shifts run 140ms." },
+      { "name": "card-lift", "value": "260ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Example card preview lifts 6px and gains Float on hover." },
+      { "name": "duration-exit", "value": "150ms", "purpose": "View transition exit fade." },
+      { "name": "duration-enter", "value": "210ms", "purpose": "View transition enter fade, delayed by the exit." },
+      { "name": "duration-move", "value": "400ms", "purpose": "View transition slide and shared-element morph." },
+      { "name": "hero-entrance", "value": "GSAP expo.out, 0.9 to 1.3s, headline lines y 28px, laptop y 36px, phone y 64px", "purpose": "The single page-load moment; nothing starts invisible." },
+      { "name": "reduced-motion", "value": "transitions none, view transitions 0s", "purpose": "Every motion has a reduced-motion off switch." }
+    ],
+    "breakpoints": [
+      { "name": "nav-collapse", "value": "1040px" },
+      { "name": "price-2col", "value": "1060px" },
+      { "name": "rubros-2col", "value": "960px" },
+      { "name": "hero-stack", "value": "920px" },
+      { "name": "split-stack", "value": "860px" },
+      { "name": "gauges-2col", "value": "760px" },
+      { "name": "phone", "value": "560px" },
+      { "name": "phone-small", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Counter Green pill for the main action; the arrow variant draws a chevron that slides on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary ds-btn-arrow\" href=\"#\">Pedir mi propuesta</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; min-height: 52px; padding: 0.75em 1.5em; border-radius: 999px; border: 0; font: 700 1.05rem/1.1 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; letter-spacing: -0.005em; text-decoration: none; cursor: pointer; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, translate 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:active { translate: 0 1px; } .ds-btn:focus-visible { outline: 3px solid var(--accent, #0a7d55); outline-offset: 3px; } .ds-btn-primary { background: var(--accent, #0a7d55); color: #fff; } .ds-btn-primary:hover { background: var(--accent-hover, #086a48); } .ds-btn-arrow::after { content: ''; width: 0.5em; height: 0.5em; border-top: 2px solid currentColor; border-right: 2px solid currentColor; rotate: 45deg; margin-left: 0.1em; transition: translate 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-arrow:hover::after { translate: 3px 0; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary pill with a 2px Mist stroke that turns ink on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ver ejemplos</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0.75em 1.5em; border-radius: 999px; background: transparent; color: var(--ink, #0e1a16); border: 2px solid var(--bg-3, #e8edeb); font: 700 1.05rem/1.1 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; letter-spacing: -0.005em; text-decoration: none; transition: border-color 160ms ease, translate 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { border-color: var(--ink, #0e1a16); } .ds-btn-ghost:active { translate: 0 1px; } .ds-btn-ghost:focus-visible { outline: 3px solid var(--accent, #0a7d55); outline-offset: 3px; }"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "button-header",
+      "description": "Sticky white header: wordmark tile, five Moss Gray links, WhatsApp pill in Counter Green.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#\"><span class=\"ds-mark\">W</span><span><b>William Acosta</b><small>Páginas web para negocios</small></span></a><nav class=\"ds-nav\"><a href=\"#\">Cómo trabajo</a><a href=\"#\">Ejemplos</a><a href=\"#\">Su anuncio</a><a href=\"#\">Proceso</a><a href=\"#\">Precios</a></nav><a class=\"ds-header-cta\" href=\"#\">Escribir por WhatsApp</a></header>",
+      "css": ".ds-header { display: flex; align-items: center; gap: 32px; min-height: 72px; padding-inline: 24px; background: var(--bg, #fff); font-family: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; color: var(--ink, #0e1a16); } .ds-wordmark { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; color: inherit; line-height: 1.1; } .ds-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--ink, #0e1a16); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 0.95rem; } .ds-wordmark b { display: block; font-size: 1.08rem; letter-spacing: -0.02em; } .ds-wordmark small { display: block; font-size: 0.82rem; color: var(--ink-2, #44524d); } .ds-nav { display: flex; gap: 26px; } .ds-nav a { text-decoration: none; color: var(--ink-2, #44524d); font-weight: 600; font-size: 0.96rem; transition: color 140ms ease; } .ds-nav a:hover { color: var(--ink, #0e1a16); } .ds-nav a:focus-visible, .ds-header-cta:focus-visible { outline: 3px solid var(--accent, #0a7d55); outline-offset: 3px; border-radius: 6px; } .ds-header-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0.5em 1.15em; border-radius: 999px; background: var(--accent, #0a7d55); color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none; white-space: nowrap; transition: background-color 160ms ease; } .ds-header-cta:hover { background: var(--accent-hover, #086a48); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Bold label, 1.5px stroke, 12px corners; focus turns the stroke green with a soft green halo.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-name\">Nombre de su negocio</label><input id=\"ds-name\" value=\"Veterinaria Jaguareté\"><small>Lo usamos para armar su anuncio.</small></div>",
+      "css": ".ds-field { display: grid; gap: 8px; max-width: 420px; font-family: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; color: var(--ink, #0e1a16); } .ds-field label { font-weight: 700; } .ds-field input { font: inherit; font-size: 1.05rem; color: var(--ink, #0e1a16); background: var(--bg, #fff); border: 1.5px solid #c9d3cf; border-radius: 12px; padding: 0.8em 1em; min-height: 52px; caret-color: var(--accent, #0a7d55); transition: border-color 140ms ease; } .ds-field input:hover { border-color: #9fb0a9; } .ds-field input:focus-visible { border-color: var(--accent, #0a7d55); outline: 4px solid var(--accent-soft, #e3f2ec); outline-offset: 0; } .ds-field small { color: var(--ink-2, #44524d); font-size: 0.9rem; }"
+    },
+    {
+      "name": "Price Card",
+      "kind": "card",
+      "refersTo": "price-card",
+      "description": "Flat 14px Paper card on the Tint band with drawn green checkmarks.",
+      "html": "<div class=\"ds-price-wrap\"><div class=\"ds-price\"><h3>Página única</h3><p class=\"ds-price-from\"><small>desde</small> Gs. 1.200.000</p><p class=\"ds-price-days\">Lista en 7 días</p><ul><li>Una página con sus servicios, fotos y ubicación</li><li>Botón de WhatsApp a un toque</li></ul></div></div>",
+      "css": ".ds-price-wrap { background: var(--bg-2, #f4f6f5); padding: 24px; font-family: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; } .ds-price { display: grid; gap: 10px; max-width: 280px; padding: 28px 24px 30px; border-radius: 14px; background: var(--bg, #fff); color: var(--ink, #0e1a16); } .ds-price h3 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; } .ds-price p { margin: 0; } .ds-price-from { margin-top: 8px; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; } .ds-price-from small { display: block; font-size: 0.9rem; font-weight: 500; letter-spacing: 0; color: var(--ink-2, #44524d); } .ds-price-days { font-weight: 700; } .ds-price ul { display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; color: var(--ink-2, #44524d); } .ds-price li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; } .ds-price li::before { content: ''; width: 10px; height: 6px; margin-top: 0.55em; border-left: 2px solid var(--accent, #0a7d55); border-bottom: 2px solid var(--accent, #0a7d55); rotate: -45deg; }"
+    },
+    {
+      "name": "Featured Price Card",
+      "kind": "card",
+      "refersTo": "price-card-featured",
+      "description": "The recommended plan inverts to Night with a Night Mint pill badge and mint checkmarks.",
+      "html": "<div class=\"ds-price-f\"><h3>Sitio completo</h3><span class=\"ds-badge\">Recomendado</span><p class=\"ds-price-f-from\"><small>desde</small> Gs. 2.200.000</p><ul><li>De 4 a 6 secciones y galería</li><li>Formulario o pedidos por WhatsApp</li></ul></div>",
+      "css": ".ds-price-f { display: grid; gap: 10px; max-width: 280px; padding: 28px 24px 30px; border-radius: 14px; background: var(--dark, #0e1a16); color: var(--on-dark, #eef3f1); font-family: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; } .ds-price-f h3 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; } .ds-badge { justify-self: start; padding: 0.25em 0.75em; border-radius: 999px; background: var(--on-dark-accent, #5fd3a4); color: var(--dark, #0e1a16); font-size: 0.8rem; font-weight: 700; } .ds-price-f-from { margin: 8px 0 0; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; } .ds-price-f-from small { display: block; font-size: 0.9rem; font-weight: 500; letter-spacing: 0; color: var(--on-dark-2, #a7b7b0); } .ds-price-f ul { display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; color: var(--on-dark-2, #a7b7b0); } .ds-price-f li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; } .ds-price-f li::before { content: ''; width: 10px; height: 6px; margin-top: 0.55em; border-left: 2px solid var(--on-dark-accent, #5fd3a4); border-bottom: 2px solid var(--on-dark-accent, #5fd3a4); rotate: -45deg; }"
+    },
+    {
+      "name": "Device Frames",
+      "kind": "custom",
+      "refersTo": "device-frame",
+      "description": "Signature: a white laptop frame with Tint bar and pill URL, overlapped by an ink phone; both float.",
+      "html": "<div class=\"ds-stage\"><div class=\"ds-laptop\"><div class=\"ds-bar\"><i></i><i></i><i></i><span class=\"ds-url\">odontologiapora.com.py</span></div><div class=\"ds-screen\"></div></div><div class=\"ds-phone\"><div class=\"ds-phone-screen\"></div></div></div>",
+      "css": ".ds-stage { position: relative; max-width: 520px; padding: 0 64px 48px 0; font-family: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; } .ds-laptop { border-radius: 14px; background: var(--bg, #fff); overflow: hidden; box-shadow: 0 30px 60px -28px rgb(14 26 22 / 0.35), 0 8px 18px -10px rgb(14 26 22 / 0.18), 0 0 0 1px rgb(14 26 22 / 0.08); } .ds-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: var(--bg-2, #f4f6f5); } .ds-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--bg-3, #e8edeb); } .ds-url { flex: 1; margin-left: 10px; padding: 5px 12px; border-radius: 999px; background: var(--bg, #fff); font-size: 0.78rem; color: var(--ink-2, #44524d); } .ds-screen { aspect-ratio: 16 / 9; background: #e7f3ef; } .ds-phone { position: absolute; right: 0; bottom: 0; width: 34%; padding: 7px; border-radius: 28px; background: var(--ink, #0e1a16); box-shadow: 0 30px 60px -28px rgb(14 26 22 / 0.35), 0 8px 18px -10px rgb(14 26 22 / 0.18); } .ds-phone-screen { aspect-ratio: 9 / 16.5; border-radius: 22px; background: #fbf3e8; }"
+    },
+    {
+      "name": "Process Step",
+      "kind": "custom",
+      "refersTo": "process-dot",
+      "description": "Numbered ring on a Mist track with a green fill; the dot fills solid when its step is active.",
+      "html": "<ol class=\"ds-process\"><span class=\"ds-line\"><span class=\"ds-fill\"></span></span><li class=\"ds-step is-on\"><span class=\"ds-dot\">1</span><h3>Me cuenta su negocio</h3><p>Por WhatsApp, en diez minutos.</p></li><li class=\"ds-step\"><span class=\"ds-dot\">2</span><h3>Le muestro la propuesta</h3><p>Con precio y plazo cerrados.</p></li></ol>",
+      "css": ".ds-process { position: relative; display: grid; gap: 40px; max-width: 520px; margin: 0; padding: 0 0 0 72px; list-style: none; font-family: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif; color: var(--ink, #0e1a16); } .ds-line { position: absolute; left: 21px; top: 8px; bottom: 8px; width: 3px; border-radius: 2px; background: var(--bg-3, #e8edeb); } .ds-fill { display: block; height: 50%; border-radius: 2px; background: var(--accent, #0a7d55); } .ds-step { position: relative; display: grid; gap: 8px; } .ds-step h3 { margin: 0; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; } .ds-step p { margin: 0; color: var(--ink-2, #44524d); } .ds-dot { position: absolute; left: -72px; top: -6px; width: 45px; height: 45px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: var(--bg, #fff); border: 2.5px solid var(--accent, #0a7d55); color: var(--accent, #0a7d55); transition: background-color 220ms ease, color 220ms ease; } .ds-step.is-on .ds-dot { background: var(--accent, #0a7d55); color: #fff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Product on the Counter",
+    "overview": "The category standard for a web studio, played straight: Stripe's finish, Framer's structure. The visitor sees the product (real example sites inside laptop, phone and browser frames) before reading a single claim, and the studio's own surface steps back so those frames carry the color. The ground is white, one tone step marks alternating bands, a single deep-green ink family sets both the text and the dark bands, and one accent green is kept for actions and progress.\n\nDensity is calm and generous: sections breathe on 80 to 160px of vertical padding, headings are heavy and tight, body text is regular and readable. Depth is reserved for things that float in the real world (devices, the chat preview); everything else is flat color fields with soft 14px corners. Motion is one hero entrance, one reveal per section, the pinned rebuild story, the process line drawing and the score counters; nothing loops for decoration.\n\nThe build refuses the old night-and-neon look and any costume world: no gradients, no rules or dividers, no eyebrow labels over headings, no monospace.",
+    "keyCharacteristics": [
+      "White ground, one tint band (#f4f6f5), deep-green ink and dark bands, one action green.",
+      "One family, Schibsted Grotesk: 800 and tight for display, 400 for text, 700 for actions.",
+      "Pill buttons; 14px frames; flat bands; shadows only under floating devices.",
+      "Example sites inside frames wear their own brands; the studio never borrows them."
+    ],
+    "rules": [
+      { "name": "The Action Green Rule", "body": "Counter Green marks actions and progress: buttons, links, process dots and the line, price checkmarks. Plain text, headings and decoration never take it.", "section": "colors" },
+      { "name": "The Ink Is the Night Rule", "body": "Dark bands are the ink color (#0e1a16), not a separate dark palette. A new dark surface uses Night, Night Raised and Night Line, never black or a blue-black.", "section": "colors" },
+      { "name": "The Borrowed Brands Rule", "body": "Colors inside example mocks, the promo video's example scenes, the WhatsApp chat preview (#075e54 header, #efe7de wall, #d9fdd3 bubble), the WhatsApp green (#25d366) and the Lighthouse gauge colors are quotations of other systems. They stay inside their frames and are never promoted to studio tokens.", "section": "colors" },
+      { "name": "The Heavy-Or-Regular Rule", "body": "Headings are 800, actions and emphasis 700, nav 600, text 400. No light weights, no italics for emphasis, no uppercase, no letter-spaced labels.", "section": "typography" },
+      { "name": "The No Eyebrow Rule", "body": "A heading stands alone with its lede below it. Nothing small sits above a heading to introduce it.", "section": "typography" },
+      { "name": "The Only Devices Float Rule", "body": "If it is not a device, a chat or a clickable device preview, it has no shadow. Cards, panels, buttons and fields are flat.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Counter Green (#0a7d55) for buttons, links, process progress and price checkmarks only.",
+      "Do alternate Paper, Tint and Night bands for section rhythm instead of dividers.",
+      "Do set headings at 800 with negative tracking (-0.02em to -0.04em) and text at 400.",
+      "Do make every pressable control a 999px pill at least 44px tall.",
+      "Do put product in frames: laptop, phone, browser and chat frames with the Float shadow.",
+      "Do use Night Mint (#5fd3a4) for focus and accents on dark bands.",
+      "Do respect reduced motion: transitions off, view transitions instant."
+    ],
+    "donts": [
+      "Don't add gradients, neon, glows or any night-and-neon styling.",
+      "Don't put an eyebrow or kicker label above a heading.",
+      "Don't use monospace, uppercase labels or letter-spaced captions.",
+      "Don't add shadows to cards, panels, buttons or fields; only devices, the chat preview and hovered example cards float.",
+      "Don't draw rules or divider lines between content.",
+      "Don't promote an example site's brand colors or fonts (Bricolage Grotesque, DM Sans, WhatsApp green) into the studio's own UI.",
+      "Don't color plain text or headings with the accent green."
+    ]
+  }
+}

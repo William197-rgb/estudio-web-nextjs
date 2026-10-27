@@ -20,8 +20,8 @@ type ProblemsSceneProps = {
 
 const CrossIcon: React.FC = () => (
   <svg width="96" height="96" viewBox="0 0 48 48" style={{ flex: "none" }}>
-    <circle cx="24" cy="24" r="22" fill="#FF5C4D" />
-    <path d="M 16 16 L 32 32 M 32 16 L 16 32" stroke="#0E1320" strokeWidth="5" strokeLinecap="round" />
+    <circle cx="24" cy="24" r="22" fill="#FF6B5B" />
+    <path d="M 16 16 L 32 32 M 32 16 L 16 32" stroke="#0E1A16" strokeWidth="5" strokeLinecap="round" />
   </svg>
 );
 
@@ -38,7 +38,7 @@ const ProblemsSceneInner: React.FC<ProblemsSceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#0E1320",
+        backgroundColor: "#0E1A16",
         fontFamily: bodyFont,
         ...style,
       }}
@@ -55,7 +55,7 @@ const ProblemsSceneInner: React.FC<ProblemsSceneProps> = ({
           fontSize: 100,
           lineHeight: 1.02,
           letterSpacing: "-0.02em",
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           opacity: interpolate(frame, [0, 12], [0, 1], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
@@ -74,7 +74,7 @@ const ProblemsSceneInner: React.FC<ProblemsSceneProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 36,
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           fontSize: 56,
           fontWeight: 500,
           lineHeight: 1.15,
@@ -102,7 +102,7 @@ const ProblemsSceneInner: React.FC<ProblemsSceneProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 36,
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           fontSize: 56,
           fontWeight: 500,
           lineHeight: 1.15,
@@ -130,7 +130,7 @@ const ProblemsSceneInner: React.FC<ProblemsSceneProps> = ({
           display: "flex",
           alignItems: "center",
           gap: 36,
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           fontSize: 56,
           fontWeight: 500,
           lineHeight: 1.15,
@@ -156,8 +156,8 @@ const ProblemsSceneInner: React.FC<ProblemsSceneProps> = ({
           right: 90,
           top: 1400,
           paddingTop: 48,
-          borderTop: "3px solid #2A3348",
-          color: "#9AA4B8",
+          borderTop: "3px solid #2A3B34",
+          color: "#A7B7B0",
           fontSize: 54,
           lineHeight: 1.25,
           opacity: interpolate(frame, [62, 74], [0, 1], {

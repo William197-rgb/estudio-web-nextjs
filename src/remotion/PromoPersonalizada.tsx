@@ -58,8 +58,8 @@ export const PromoPersonalizada = ({ businessName, heroText }: PromoPersonalizad
           offer="Pídame su propuesta sin compromiso"
           buttonLabel="Escríbame por WhatsApp"
           personName="William Acosta"
-          role="Diseño web para negocios de Central"
-          place="Central, Paraguay"
+          role="Páginas web para negocios"
+          place="Atiendo en todo Paraguay"
         />
       </TransitionSeries.Sequence>
     </TransitionSeries>

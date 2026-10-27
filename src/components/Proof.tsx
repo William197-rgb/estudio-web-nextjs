@@ -72,7 +72,7 @@ export function Proof() {
             {LABELS.map(([key, label]) => (
               <div className="gauge" key={key} data-score={scores[key]}>
                 <svg viewBox="0 0 100 100" aria-hidden="true">
-                  <circle cx="50" cy="50" r="44" fill="none" stroke="#26304a" strokeWidth="8" />
+                  <circle cx="50" cy="50" r="44" fill="none" stroke="#2a3b34" strokeWidth="8" />
                   <circle
                     className="gauge-arc"
                     cx="50"

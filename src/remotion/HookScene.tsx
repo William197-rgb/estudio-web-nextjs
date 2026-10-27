@@ -27,7 +27,7 @@ const HookSceneInner: React.FC<HookSceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#0E1320",
+        backgroundColor: "#0E1A16",
         fontFamily: bodyFont,
         ...style,
       }}
@@ -44,7 +44,7 @@ const HookSceneInner: React.FC<HookSceneProps> = ({
           fontSize: 92,
           lineHeight: 1.05,
           letterSpacing: "-0.02em",
-          color: "#F5F7FA",
+          color: "#F4F6F5",
           opacity: interpolate(frame, [0, 14], [0, 1], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
@@ -70,7 +70,7 @@ const HookSceneInner: React.FC<HookSceneProps> = ({
           fontSize: 112,
           lineHeight: 1,
           letterSpacing: "-0.02em",
-          color: "#FF5C4D",
+          color: "#FF6B5B",
           opacity: interpolate(frame, [26, 38], [0, 1], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
@@ -92,8 +92,8 @@ const HookSceneInner: React.FC<HookSceneProps> = ({
           right: 130,
           top: 720,
           height: 900,
-          backgroundColor: "#171E2E",
-          border: "3px solid #2A3348",
+          backgroundColor: "#172720",
+          border: "3px solid #2A3B34",
           borderRadius: 48,
           overflow: "hidden",
           display: "flex",
@@ -125,20 +125,20 @@ const HookSceneInner: React.FC<HookSceneProps> = ({
             alignItems: "center",
             gap: 14,
             padding: "34px 36px",
-            borderBottom: "3px solid #2A3348",
+            borderBottom: "3px solid #2A3B34",
           }}
         >
-          <div style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: "#FF5C4D" }} />
+          <div style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: "#FF6B5B" }} />
           <div style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: "#F2B33D" }} />
-          <div style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: "#3A4560" }} />
+          <div style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: "#3A4D45" }} />
           <div
             style={{
               marginLeft: 18,
               flex: 1,
-              backgroundColor: "#0E1320",
+              backgroundColor: "#0E1A16",
               borderRadius: 999,
               padding: "16px 26px",
-              color: "#9AA4B8",
+              color: "#A7B7B0",
               fontSize: 32,
               whiteSpace: "nowrap",
               overflow: "hidden",
@@ -161,14 +161,14 @@ const HookSceneInner: React.FC<HookSceneProps> = ({
           }}
         >
           <svg width="190" height="190" viewBox="0 0 100 100">
-            <rect x="14" y="20" width="72" height="60" rx="8" fill="none" stroke="#9AA4B8" strokeWidth="5" />
-            <line x1="14" y1="36" x2="86" y2="36" stroke="#9AA4B8" strokeWidth="5" />
-            <path d="M 38 50 L 62 70 M 62 50 L 38 70" stroke="#FF5C4D" strokeWidth="7" strokeLinecap="round" />
+            <rect x="14" y="20" width="72" height="60" rx="8" fill="none" stroke="#A7B7B0" strokeWidth="5" />
+            <line x1="14" y1="36" x2="86" y2="36" stroke="#A7B7B0" strokeWidth="5" />
+            <path d="M 38 50 L 62 70 M 62 50 L 38 70" stroke="#FF6B5B" strokeWidth="7" strokeLinecap="round" />
           </svg>
-          <div style={{ color: "#F5F7FA", fontSize: 52, fontWeight: 700, lineHeight: 1.15 }}>
+          <div style={{ color: "#F4F6F5", fontSize: 52, fontWeight: 700, lineHeight: 1.15 }}>
             No se puede acceder a este sitio
           </div>
-          <div style={{ color: "#9AA4B8", fontSize: 34, letterSpacing: "0.04em" }}>
+          <div style={{ color: "#A7B7B0", fontSize: 34, letterSpacing: "0.04em" }}>
             ERR_NAME_NOT_RESOLVED
           </div>
         </div>

@@ -36,12 +36,12 @@ export function Rebuild() {
           });
 
           // Inactive steps use a dimmer colour that still passes WCAG contrast (5.2:1), not opacity.
-          const DIM = "#7c879c";
+          const DIM = "#7f918a";
           const focus = (i: number, at: string | number) => {
             tl.to(steps.map((st) => st.querySelector("strong")), { color: DIM, duration: 0.1 }, at)
               .to(steps.map((st) => st.querySelector("p")), { color: DIM, duration: 0.1 }, at)
-              .to(steps[i].querySelector("strong"), { color: "#eef1f7", duration: 0.1 }, at)
-              .to(steps[i].querySelector("p"), { color: "#a3aec4", duration: 0.1 }, at);
+              .to(steps[i].querySelector("strong"), { color: "#eef3f1", duration: 0.1 }, at)
+              .to(steps[i].querySelector("p"), { color: "#a7b7b0", duration: 0.1 }, at);
           };
 
           // Starting state: the broken page, step 1 in focus.
@@ -50,8 +50,8 @@ export function Rebuild() {
             .set(".layer-final", { opacity: 0 })
             .set(".url-dead", { opacity: 1 })
             .set(".url-live", { opacity: 0 })
-            .set(".rb-num", { backgroundColor: "transparent", color: "#a3aec4", borderColor: "#26304a" })
-            .set(steps[0].querySelector(".rb-num"), { backgroundColor: "#ff5c4d", color: "#0a1020", borderColor: "#ff5c4d" });
+            .set(".rb-num", { backgroundColor: "transparent", color: "#a7b7b0", borderColor: "#2a3b34" })
+            .set(steps[0].querySelector(".rb-num"), { backgroundColor: "#ff6b5b", color: "#0e1a16", borderColor: "#ff6b5b" });
           focus(0, 0);
           tl.addLabel("dead", 0.4);
 
@@ -63,7 +63,7 @@ export function Rebuild() {
 
           // Step 2: the skeleton grows block by block.
           tl.to(".layer-dead", { opacity: 0, scale: 0.94, duration: 0.25 }, "wire")
-            .to(steps[1].querySelector(".rb-num"), { backgroundColor: "#3d6bf2", color: "#ffffff", borderColor: "#3d6bf2", duration: 0.1 }, "wire")
+            .to(steps[1].querySelector(".rb-num"), { backgroundColor: "#5fd3a4", color: "#0e1a16", borderColor: "#5fd3a4", duration: 0.1 }, "wire")
             .to(".layer-wire", { opacity: 1, duration: 0.1 }, "wire")
             .from(".layer-wire .mock > *", { scaleY: 0, transformOrigin: "50% 0%", stagger: 0.12, duration: 0.3 }, "wire+=0.05")
             .addLabel("final", "+=0.25");
@@ -94,7 +94,7 @@ export function Rebuild() {
                 <span className="rb-num">1</span>
                 <strong>La web dejó de existir</strong>
                 <p>
-                  Google dio de baja los sitios negocio.site en 2024. Muchos negocios de Central todavía los tienen
+                  Google dio de baja los sitios negocio.site en 2024. Muchos negocios todavía los tienen
                   en su ficha de Maps, y quien toca el enlace encuentra un error.
                 </p>
               </li>
@@ -130,9 +130,9 @@ export function Rebuild() {
               </div>
               <div className="layer layer-dead">
                 <svg viewBox="0 0 100 100" aria-hidden="true">
-                  <rect x="14" y="20" width="72" height="60" rx="8" fill="none" stroke="#a3aec4" strokeWidth="5" />
-                  <line x1="14" y1="36" x2="86" y2="36" stroke="#a3aec4" strokeWidth="5" />
-                  <path d="M38 50 62 70M62 50 38 70" stroke="#ff5c4d" strokeWidth="7" strokeLinecap="round" />
+                  <rect x="14" y="20" width="72" height="60" rx="8" fill="none" stroke="#a7b7b0" strokeWidth="5" />
+                  <line x1="14" y1="36" x2="86" y2="36" stroke="#a7b7b0" strokeWidth="5" />
+                  <path d="M38 50 62 70M62 50 38 70" stroke="#ff6b5b" strokeWidth="7" strokeLinecap="round" />
                 </svg>
                 <b>No se puede acceder a este sitio</b>
                 <code>ERR_NAME_NOT_RESOLVED</code>
