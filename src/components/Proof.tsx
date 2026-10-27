@@ -1,8 +1,5 @@
-"use client";
-
-import { useRef } from "react";
+import { ProofMotion } from "@/components/ProofMotion";
 import report from "@/data/lighthouse.json";
-import { gsap, useGSAP } from "@/lib/gsap";
 
 type Scores = { performance: number; accessibility: number; bestPractices: number; seo: number };
 
@@ -23,42 +20,11 @@ function color(score: number) {
 
 // Real Lighthouse results for this same site, written to lighthouse.json after each audit.
 export function Proof() {
-  const root = useRef<HTMLElement>(null);
   const scores = report.scores as Scores | null;
 
-  useGSAP(
-    () => {
-      if (!scores) return;
-      const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.utils.toArray<HTMLElement>(".gauge").forEach((gauge) => {
-          const target = Number(gauge.dataset.score);
-          const arc = gauge.querySelector(".gauge-arc");
-          const value = gauge.querySelector(".gauge-value");
-          const counter = { n: 0 };
-          const tl = gsap.timeline({
-            scrollTrigger: { trigger: gauge, start: "top 85%", once: true },
-            defaults: { duration: 1.2, ease: "power2.out" },
-          });
-          tl.fromTo(arc, { strokeDashoffset: CIRC }, { strokeDashoffset: CIRC * (1 - target / 100) }, 0).fromTo(
-            counter,
-            { n: 0 },
-            {
-              n: target,
-              onUpdate: () => {
-                if (value) value.textContent = String(Math.round(counter.n));
-              },
-            },
-            0,
-          );
-        });
-      });
-    },
-    { scope: root },
-  );
-
   return (
-    <section id="medido" ref={root} className="section section-night" aria-labelledby="medido-title">
+    <section id="medido" className="section section-night" aria-labelledby="medido-title">
+      <ProofMotion />
       <div className="wrap">
         <div className="section-head">
           <h2 id="medido-title">Medido, no prometido</h2>

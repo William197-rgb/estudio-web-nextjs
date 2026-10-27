@@ -324,6 +324,35 @@ a {
   padding-top: clamp(8px, 2vw, 32px);
 }
 
+/* The one page-load moment, in CSS so it starts with the first paint. Nothing starts invisible:
+   the headline and devices only settle into place from slightly lower. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line {
+    animation: hero-rise 900ms var(--ease-out) both;
+    --rise: 28px;
+  }
+
+  .hero-line + .hero-line {
+    animation-delay: 100ms;
+  }
+
+  .device-laptop {
+    animation: hero-rise 1200ms var(--ease-out) 50ms both;
+    --rise: 36px;
+  }
+
+  .device-phone {
+    animation: hero-rise 1300ms var(--ease-out) 150ms both;
+    --rise: 64px;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    translate: 0 var(--rise);
+  }
+}
+
 .hero-lede {
   max-width: 40ch;
   font-size: var(--step-1);
@@ -407,6 +436,16 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* The hero and rebuild examples (the same dentist site) use the studio's face, so the example
+   brands' fonts are not fetched for the first screens; the rubro cards below (content-visibility)
+   load them only when they come near. */
+.hero-devices .mock,
+.hero-devices .mock-wa,
+.browser-view .mock,
+.browser-view .mock-wa {
+  font-family: var(--font-sans), sans-serif;
 }
 
 .device-laptop .device-screen {
@@ -504,6 +543,20 @@ a {
     order: 4;
     margin-top: 0;
   }
+}
+
+/* Section entrances (Reveals.tsx adds these classes only when motion is allowed). */
+.rv {
+  opacity: 0;
+  translate: 0 24px;
+  transition:
+    opacity 900ms var(--ease-out),
+    translate 900ms var(--ease-out);
+}
+
+.rv.is-in {
+  opacity: 1;
+  translate: 0 0;
 }
 
 /* ---------- section scaffolding ---------- */
@@ -664,6 +717,7 @@ a {
 .browser-view {
   position: relative;
   aspect-ratio: 4 / 2.75;
+  content-visibility: auto;
   background: var(--bg-2);
   --mock-size: clamp(9px, 0.95vw, 14px);
 }
@@ -925,6 +979,8 @@ a {
 
 .rubro-preview {
   aspect-ratio: 4 / 4.2;
+  /* Off-screen examples are not laid out, so their brand fonts load only when they come near. */
+  content-visibility: auto;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-2);

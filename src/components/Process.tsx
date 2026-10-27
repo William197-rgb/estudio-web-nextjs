@@ -1,7 +1,4 @@
-"use client";
-
-import { useRef } from "react";
-import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { ProcessMotion } from "@/components/ProcessMotion";
 
 const STEPS = [
   {
@@ -23,44 +20,9 @@ const STEPS = [
 ];
 
 export function Process() {
-  const root = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const steps = gsap.utils.toArray<HTMLElement>(".process-step");
-      const mm = gsap.matchMedia();
-
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // The line draws itself as the reader moves down the steps.
-        gsap.fromTo(
-          ".process-line-fill",
-          { scaleY: 0 },
-          {
-            scaleY: 1,
-            ease: "none",
-            scrollTrigger: { trigger: ".process", start: "top 70%", end: "bottom 60%", scrub: 0.5 },
-          },
-        );
-        steps.forEach((step) => {
-          ScrollTrigger.create({
-            trigger: step,
-            start: "top 65%",
-            onEnter: () => step.classList.add("is-on"),
-            onLeaveBack: () => step.classList.remove("is-on"),
-          });
-        });
-      });
-
-      mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(".process-line-fill", { scaleY: 1 });
-        steps.forEach((step) => step.classList.add("is-on"));
-      });
-    },
-    { scope: root },
-  );
-
   return (
-    <section id="proceso" ref={root} className="section section-paper" aria-labelledby="proceso-title">
+    <section id="proceso" className="section section-paper" aria-labelledby="proceso-title">
+      <ProcessMotion />
       <div className="wrap">
         <div className="section-head">
           <h2 id="proceso-title">Cuatro pasos, sin vueltas</h2>
