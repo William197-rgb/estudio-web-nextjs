@@ -17,8 +17,16 @@ export function useIdleGsap(scopeId: string, setup: Setup) {
       import("./gsap-core").then((mods) => {
         const scope = document.getElementById(scopeId);
         if (!alive || !scope) return;
+        // A pin adds scroll space above everything after it. If the page was resting on a #anchor
+        // below (a shared link, a nav jump), keep that anchor where it was.
+        const anchor = window.location.hash ? document.getElementById(window.location.hash.slice(1)) : null;
+        const before = anchor?.getBoundingClientRect().top;
         mm = mods.gsap.matchMedia(scope);
         setup(mods, mm);
+        if (anchor && before !== undefined && before > -40 && before < 160) {
+          const after = anchor.getBoundingClientRect().top;
+          if (Math.abs(after - before) > 1) window.scrollBy(0, after - before);
+        }
       });
     };
 

@@ -52,8 +52,8 @@ async function RubroContent({ params }: { params: Params }) {
     >
       <main id="contenido" className="rubro-page">
         <div className="wrap">
-          <Link href="/#rubros" className="back-link" transitionTypes={["nav-back"]}>
-            Volver a los rubros
+          <Link href="/#ejemplos" className="back-link" transitionTypes={["nav-back"]}>
+            Arme su propia web
           </Link>
           <div className="rubro-layout">
             <div>

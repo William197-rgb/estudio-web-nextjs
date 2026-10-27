@@ -24,8 +24,8 @@ export function Hero() {
             <Link href="#contacto" className="btn btn-primary btn-arrow">
               Pedir mi propuesta
             </Link>
-            <Link href="#rubros" className="btn btn-ghost">
-              Ver ejemplos
+            <Link href="#ejemplos" className="btn btn-ghost">
+              Arme su web
             </Link>
           </div>
           <HeroClock />

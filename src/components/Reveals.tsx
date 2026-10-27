@@ -9,6 +9,8 @@ import { useEffect } from "react";
 const GROUPS = [
   ".section-head > *",
   ".rubro-grid > *",
+  ".builder-form > *",
+  ".builder-preview",
   ".price-grid > li, .price-more",
   ".ad-player",
   ".contact-form > *",
