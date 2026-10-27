@@ -21,7 +21,6 @@ export function RubrosGrid() {
               href={`/rubros/${rubro.slug}`}
               className="rubro-card"
               transitionTypes={["nav-forward"]}
-              prefetch={true}
             >
               <ViewTransition name={`rubro-${rubro.slug}`} share="morph" default="none">
                 <div className="rubro-preview">
