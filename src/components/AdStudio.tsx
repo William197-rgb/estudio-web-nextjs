@@ -48,7 +48,7 @@ export function AdStudio() {
       <div className="wrap ad-grid">
         <div>
           <div className="section-head">
-            <h2 id="anuncio-title">Pruebe un anuncio con el nombre de su negocio</h2>
+            <h2 id="anuncio-title">Su anuncio, con su nombre</h2>
             <p>
               Escriba el nombre y elija el rubro. El video de 15 segundos se arma en vivo, en su propio navegador,
               listo para compartir en estados de WhatsApp o Reels.

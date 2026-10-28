@@ -27,7 +27,7 @@ export function RubroMock({ rubro, variant = "final", status }: Props) {
         };
 
   return (
-    <div className={variant === "wire" ? "mock mock-wire" : "mock"} style={style as CSSProperties} aria-hidden="true">
+    <div className={variant === "wire" ? "mock mock-wire" : "mock"} style={style as CSSProperties} aria-hidden="true" data-ui>
       <div className="mock-nav">
         <span className="mock-logo" />
         <b>{rubro.business}</b>

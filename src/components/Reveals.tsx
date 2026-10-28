@@ -15,6 +15,7 @@ const GROUPS = [
   ".ad-player",
   ".contact-form > *",
   ".chat",
+  ".work-grid > *",
 ];
 
 export function Reveals() {

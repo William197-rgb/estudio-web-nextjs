@@ -94,7 +94,7 @@ export function Contact() {
           </form>
         </div>
 
-        <figure className="chat" aria-label="Vista previa del mensaje">
+        <figure data-ui className="chat" aria-label="Vista previa del mensaje">
           <div className="chat-head">
             <span className="chat-avatar" aria-hidden="true">
               W

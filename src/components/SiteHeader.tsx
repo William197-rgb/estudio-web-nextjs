@@ -15,6 +15,7 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="site-nav" aria-label="Secciones">
+          <Link href="/#trabajos">Trabajos</Link>
           <Link href="/#reconstruccion">Cómo trabajo</Link>
           <Link href="/#ejemplos">Arme su web</Link>
           <Link href="/#anuncio">Su anuncio</Link>

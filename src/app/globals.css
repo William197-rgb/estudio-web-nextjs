@@ -336,15 +336,6 @@ a {
     animation-delay: 100ms;
   }
 
-  .device-laptop {
-    animation: hero-rise 1200ms var(--ease-out) 50ms both;
-    --rise: 36px;
-  }
-
-  .device-phone {
-    animation: hero-rise 1300ms var(--ease-out) 150ms both;
-    --rise: 64px;
-  }
 }
 
 @keyframes hero-rise {
@@ -393,91 +384,76 @@ a {
   font-weight: 700;
 }
 
-/* laptop + phone composition */
-.hero-devices {
+/* The wall of real work: three columns of full pages drifting upward at different speeds. */
+.hero-wall {
   margin: 0;
 }
 
-.hero-stage {
-  position: relative;
-  padding: 0 clamp(36px, 6vw, 96px) clamp(40px, 5vw, 64px) 0;
-}
-
-.device-laptop {
+.wall-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  height: clamp(420px, 44vw, 600px);
+  overflow: hidden;
   border-radius: var(--radius);
-  background: var(--bg);
-  box-shadow: var(--float), 0 0 0 1px rgb(14 26 22 / 0.08); /* taste-skill-ignore: floating device mockup */
+  background: var(--dark);
+  padding: 14px;
+}
+
+.wall-col {
   overflow: hidden;
+  border-radius: 10px;
 }
 
-.device-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  background: var(--bg-2);
+.wall-col:nth-child(2) {
+  margin-top: -90px;
 }
 
-.device-bar i {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--bg-3);
+.wall-track {
+  display: grid;
+  gap: 14px;
 }
 
-.device-url {
-  flex: 1;
-  margin-left: 10px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--bg);
-  font-size: 0.78rem;
-  color: var(--ink-2);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.wall-track img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-/* The hero and rebuild examples (the same dentist site) use the studio's face, so the example
-   brands' fonts are not fetched for the first screens; the rubro cards below (content-visibility)
-   load them only when they come near. */
-.hero-devices .mock,
-.hero-devices .mock-wa,
-.browser-view .mock,
-.browser-view .mock-wa {
-  font-family: var(--font-sans), sans-serif;
+@media (prefers-reduced-motion: no-preference) {
+  .wall-track {
+    animation: wall-up 70s linear infinite;
+  }
+
+  .wall-col:nth-child(2) .wall-track {
+    animation-duration: 90s;
+    animation-direction: reverse;
+  }
+
+  .wall-col:nth-child(3) .wall-track {
+    animation-duration: 58s;
+  }
+
+  .hero-wall:hover .wall-track {
+    animation-play-state: paused;
+  }
+
+  .hero-wall {
+    animation: hero-rise 1200ms var(--ease-out) 80ms both;
+    --rise: 40px;
+  }
 }
 
-.device-laptop .device-screen {
-  aspect-ratio: 16 / 9;
-  --mock-size: clamp(8px, 0.5vw + 3px, 11px);
+@keyframes wall-up {
+  to {
+    transform: translateY(calc(-50% - 7px));
+  }
 }
 
-.device-phone {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: clamp(130px, 34%, 210px);
-  padding: 7px;
-  border-radius: 28px;
-  background: var(--ink);
-  box-shadow: var(--float); /* taste-skill-ignore: floating device mockup */
-}
-
-.device-phone .device-screen {
-  aspect-ratio: 9 / 16.5;
-  border-radius: 22px;
-  overflow: hidden;
-  --mock-size: clamp(6.4px, 0.3vw + 3.4px, 8.6px);
-}
-
-.device-phone .mock-cards {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.hero-devices figcaption {
+.hero-wall figcaption {
   margin-top: 14px;
-  font-size: 0.82rem;
+  font-size: var(--step--1);
   color: var(--ink-2);
 }
 
@@ -486,17 +462,8 @@ a {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .hero-devices {
-    max-width: 620px;
-  }
 }
 
-@media (max-width: 520px) {
-  .hero-stage {
-    padding-right: 28px;
-    padding-bottom: 36px;
-  }
-}
 
 /* On a phone the product comes right after the actions; the clock line moves below it. */
 @media (max-width: 560px) {
@@ -522,21 +489,14 @@ a {
     margin-top: 0;
   }
 
-  .hero-devices {
+  .hero-wall {
     order: 3;
   }
 
-  /* The example text cannot shrink further on a phone, so the frames get taller instead. */
-  .device-laptop .device-screen {
-    aspect-ratio: 4 / 3.3;
-  }
-
-  .device-phone {
-    width: 44%;
-  }
-
-  .device-phone .device-screen {
-    aspect-ratio: 9 / 18.5;
+  .wall-cols {
+    height: 420px;
+    gap: 10px;
+    padding: 10px;
   }
 
   .hero-clock {
@@ -557,6 +517,79 @@ a {
 .rv.is-in {
   opacity: 1;
   translate: 0 0;
+}
+
+/* ---------- work ---------- */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 72px) clamp(20px, 3vw, 40px);
+}
+
+.work-tile:nth-child(even) {
+  margin-top: clamp(0px, 8vw, 120px);
+}
+
+.work-media {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.work-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-out);
+}
+
+.work-media:hover video {
+  transform: scale(1.03);
+}
+
+.work-meta {
+  display: grid;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.work-meta h3 {
+  font-size: var(--step-2);
+}
+
+.work-kind {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.work-meta p {
+  max-width: 46ch;
+}
+
+.work-link {
+  justify-self: start;
+  margin-top: 6px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  transition: text-underline-offset 200ms var(--ease-out);
+}
+
+.work-link:hover {
+  text-underline-offset: 0.5em;
+}
+
+@media (max-width: 760px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .work-tile:nth-child(even) {
+    margin-top: 0;
+  }
 }
 
 /* ---------- section scaffolding ---------- */
@@ -666,7 +699,6 @@ a {
   border-radius: var(--radius);
   background: var(--dark-2);
   overflow: hidden;
-  box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.55); /* taste-skill-ignore: floating device mockup */
 }
 
 .browser-bar {
@@ -1496,7 +1528,6 @@ a {
   background: var(--ink);
   border: 9px solid var(--ink);
   aspect-ratio: 9 / 16;
-  box-shadow: var(--float); /* taste-skill-ignore: floating device mockup */
 }
 
 .ad-poster {

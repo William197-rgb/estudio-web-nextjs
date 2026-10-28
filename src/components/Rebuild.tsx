@@ -36,7 +36,7 @@ export function Rebuild() {
             </ol>
           </div>
 
-          <div className="browser" aria-hidden="true">
+          <div className="browser" aria-hidden="true" data-ui>
             <div className="browser-bar">
               <i />
               <i />

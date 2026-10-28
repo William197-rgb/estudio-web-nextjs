@@ -16,10 +16,10 @@ export function Pricing() {
           {PLANS.map((plan) => (
             <li key={plan.name} className={plan.featured ? "price-card is-featured" : "price-card"}>
               <h3>{plan.name}</h3>
-              {plan.featured && <span className="price-badge">Recomendado</span>}
               <p className="price-from">
                 <small>desde</small> {plan.from}
               </p>
+              {plan.featured && <p className="price-badge">El que más piden</p>}
               <p className="price-days">Lista en {plan.days}</p>
               <ul>
                 {plan.includes.map((item) => (

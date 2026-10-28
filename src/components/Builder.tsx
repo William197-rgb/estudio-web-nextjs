@@ -223,7 +223,7 @@ export function Builder() {
               </figure>
             )}
 
-            <figure className="builder-phone" aria-label={`Vista previa de la web de ${business}`}>
+            <figure data-ui className="builder-phone" aria-label={`Vista previa de la web de ${business}`}>
               <div className="bsite" style={siteStyle}>
                 <div className="bsite-nav">
                   <span className="bsite-logo" aria-hidden="true">

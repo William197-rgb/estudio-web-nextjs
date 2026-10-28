@@ -1,11 +1,9 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { RubroMock } from "@/components/RubroMock";
-import type { Rubro } from "@/data/rubros";
 
-// The client islands of the hero. The rest of the hero renders on the server, so only the
-// clock line and the phone example hydrate; the entrance animation is plain CSS.
+// The client island of the hero. The rest of the hero renders on the server, so only the
+// clock line hydrates; the entrance animation is plain CSS.
 
 type Clock = { time: string; open: boolean };
 
@@ -68,21 +66,5 @@ export function HeroClock() {
         </span>
       )}
     </p>
-  );
-}
-
-export function HeroPhone({ rubro }: { rubro: Rubro }) {
-  const clock = useAsuncionClock();
-  const status = clock
-    ? clock.open
-      ? { open: true, label: "Abierto ahora" }
-      : { open: false, label: "Cerrado · le respondemos por WhatsApp" }
-    : undefined;
-  return (
-    <div className="device-phone">
-      <div className="device-screen">
-        <RubroMock rubro={rubro} status={status} />
-      </div>
-    </div>
   );
 }
