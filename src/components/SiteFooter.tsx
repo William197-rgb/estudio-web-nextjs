@@ -14,6 +14,9 @@ export function SiteFooter() {
             <b>Páginas web para negocios</b>
             <p>Desde Central, para todo Paraguay.</p>
             <p>
+              ¿Tiene una agencia? <Link href="/agencias">Webs en marca blanca</Link>
+            </p>
+            <p>
               WhatsApp:{" "}
               <a href={whatsappHref("Hola, William. Me interesa una página web para mi negocio.") ?? "#contacto"}>
                 {PHONE_DISPLAY}

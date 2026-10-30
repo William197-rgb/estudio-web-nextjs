@@ -5,7 +5,13 @@ import { WORK, workUrl } from "@/data/work";
 
 // Each tile plays its recorded walk-through only while it is on screen; with reduced motion the
 // poster stays. Videos are muted, silent loops with preload="none" so the page does not pay for them up front.
-export function Work() {
+const DEFAULT_LEDE = "Cuatro negocios de muestra, cuatro diseños distintos. Todos con algo que el cliente puede usar, no solo mirar.";
+
+export function Work({
+  title = "Cada web, su propio estilo",
+  lede = DEFAULT_LEDE,
+  tone = "paper",
+}: { title?: string; lede?: string; tone?: "paper" | "tint" }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,11 +32,11 @@ export function Work() {
   }, []);
 
   return (
-    <section className="section section-paper work" id="trabajos" aria-labelledby="work-title">
+    <section className={`section section-${tone} work`} id="trabajos" aria-labelledby="work-title">
       <div className="wrap">
         <div className="section-head">
-          <h2 id="work-title">Cada web, su propio estilo</h2>
-          <p>Cuatro negocios de muestra, cuatro diseños distintos. Todos con algo que el cliente puede usar, no solo mirar.</p>
+          <h2 id="work-title">{title}</h2>
+          <p>{lede}</p>
         </div>
         <div className="work-grid" ref={ref}>
           {WORK.map((w) => (

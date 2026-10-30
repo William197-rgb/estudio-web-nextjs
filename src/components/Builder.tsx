@@ -77,7 +77,7 @@ function parseLink(search: string): LinkChoices {
     name: n ? n.slice(0, 32) : undefined,
     city: c && (CITIES as readonly string[]).includes(c) ? c : undefined,
     goals: picked?.length ? picked : undefined,
-    color: k && k in COLORS ? (k as ColorKey) : undefined,
+    color: k && Object.hasOwn(COLORS, k) ? (k as ColorKey) : undefined,
   };
 }
 
