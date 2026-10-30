@@ -228,7 +228,7 @@ A single 1240px container with a fluid gutter (16 to 64px). Sections stack as fu
 
 Grids are two-column asymmetric splits (0.8/1.2 in the hero, 0.85/1.15 in the rebuild, 1/0.9 in contact, 1/360px in the ad studio) that collapse to one column between 920 and 860px. Card grids run 3 columns for examples (2 under 960px, 1 under 560px) and 4 for prices (2 under 1060px, 1 under 560px). Gauges sit 4 across, 2 under 760px.
 
-Responsive priorities are phone first: under 1040px the nav links hide and only the WhatsApp pill remains; under 520px it shortens to "WhatsApp". On phones the hero reorders to headline, lede, actions, devices, then the clock line, and the example frames get taller rather than shrinking their text.
+Responsive priorities are phone first: under 1180px the nav links hide and only the WhatsApp pill remains; under 520px it shortens to "WhatsApp". On phones the hero reorders to headline, lede, actions, devices, then the clock line, and the example frames get taller rather than shrinking their text.
 
 Example mocks are em-based: one markup scales from a card thumbnail to a hero frame by setting a single size variable on the frame.
 
@@ -272,7 +272,7 @@ Confident pills that never shout beyond their color.
 - **Focus:** stroke turns Counter Green with a 4px Halo Green outline at zero offset.
 
 ### Navigation
-Sticky white header, 72px tall: wordmark (8px ink tile with "W", name, small descriptor), five text links at 600 weight in Moss Gray that turn Forest Ink on hover, and the WhatsApp pill. Links hide under 1040px; the descriptor and "Escribir por" hide under 520px.
+Sticky white header, 72px tall: wordmark (8px ink tile with "W", name, small descriptor), five or six text links at 600 weight (each audience has its own set: the business pages and /agencias) in Moss Gray that turn Forest Ink on hover, and the WhatsApp pill. Links hide under 1180px; the descriptor and "Escribir por" hide under 520px.
 
 ### Device Frames (signature)
 Laptop: Paper body, 14px corners, Tint title bar with three Mist dots and a pill URL field, 16:9 screen. Phone: Forest Ink body with 7px bezel, 28px corners, overlapping the laptop's lower right. Both carry Float. Inside sits a live example mock in the example's own brand; the phone mock's status reads open or closed from Asunción time.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState, useSyncExternalStore } from "react";
+import { type ReactNode, useEffect, useId, useState, useSyncExternalStore } from "react";
 import { AGENCY_CITIES } from "@/data/agencias";
 
 const PY_TZ = "America/Asuncion";
@@ -43,7 +43,7 @@ const clock = (tz: string, at: Date) =>
 // The page's live thing: the agency types its name and picks its city; the sample site's credit
 // line becomes theirs and the first version and delivery dates are shown in their calendar.
 // Without JavaScript the frame shows "su agencia" and the dates line explains the plazo in words.
-export function AgencyPreview() {
+export function AgencyPreview({ children }: { children: ReactNode }) {
   const id = useId();
   const [agency, setAgency] = useState("");
   const [city, setCity] = useState(AGENCY_CITIES[0].name);
@@ -60,66 +60,68 @@ export function AgencyPreview() {
   const name = agency.trim() || "su agencia";
   const today = now ? localDate(tz, now) : null;
 
+  // Two grid cells of the hero: the copy with the controls on the left, the framed site on the right.
   return (
-    <div className="ag-live">
-      <figure className="ag-frame" data-ui>
-        <div className="ag-frame-bar" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <b>costa-alta.com</b>
+    <>
+      <div className="ag-hero-copy">
+        {children}
+        <div className="ag-controls">
+          <div className="field">
+            <label htmlFor={`${id}-name`}>Nombre de su agencia</label>
+            <input
+              id={`${id}-name`}
+              type="text"
+              maxLength={40}
+              autoComplete="organization"
+              placeholder="Agencia Norte"
+              value={agency}
+              onChange={(e) => setAgency(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor={`${id}-city`}>Su ciudad</label>
+            <select id={`${id}-city`} value={city} onChange={(e) => setCity(e.target.value)}>
+              {AGENCY_CITIES.map((c) => (
+                <option key={c.name}>{c.name}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <video
-          id={`${id}-video`}
-          src="/work/costa-alta.mp4"
-          poster="/work/costa-alta.jpg"
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          width={960}
-          height={540}
-          aria-label="Recorrido por la web de muestra de una inmobiliaria"
-        />
-        <figcaption className="ag-credit" aria-live="polite">
-          Sitio hecho por <b>{name}</b>
-        </figcaption>
-      </figure>
-
-      <div className="ag-controls">
-        <div className="field">
-          <label htmlFor={`${id}-name`}>Nombre de su agencia</label>
-          <input
-            id={`${id}-name`}
-            type="text"
-            maxLength={40}
-            autoComplete="organization"
-            placeholder="Por ejemplo, Agencia Norte"
-            value={agency}
-            onChange={(e) => setAgency(e.target.value)}
-          />
-        </div>
-        <div className="field">
-          <label htmlFor={`${id}-city`}>Su ciudad</label>
-          <select id={`${id}-city`} value={city} onChange={(e) => setCity(e.target.value)}>
-            {AGENCY_CITIES.map((c) => (
-              <option key={c.name}>{c.name}</option>
-            ))}
-          </select>
-        </div>
+        <p className="ag-dates" aria-live="polite">
+          {today && now ? (
+            <>
+              Si me mandan el brief hoy, la primera versión les llega el <b>{dayFmt.format(addBusinessDays(today, 3))}</b> y
+              la web terminada, a más tardar, el <b>{dayFmt.format(addBusinessDays(today, 7))}</b>. Ahora son las{" "}
+              {clock(tz, now)} en {city} y las {clock(PY_TZ, now)} en Paraguay.
+            </>
+          ) : (
+            <>La primera versión llega a los 3 días hábiles del brief, y la web terminada en 5 a 7 días.</>
+          )}
+        </p>
       </div>
-
-      <p className="ag-dates" aria-live="polite">
-        {today && now ? (
-          <>
-            Si me mandan el brief hoy, la primera versión les llega el <b>{dayFmt.format(addBusinessDays(today, 3))}</b> y
-            la web terminada, a más tardar, el <b>{dayFmt.format(addBusinessDays(today, 7))}</b>. Ahora son las{" "}
-            {clock(tz, now)} en {city} y las {clock(PY_TZ, now)} en Paraguay.
-          </>
-        ) : (
-          <>La primera versión llega a los 3 días hábiles del brief, y la web terminada en 5 a 7 días.</>
-        )}
-      </p>
-    </div>
+        <figure className="ag-frame" data-ui>
+          <div className="ag-frame-bar" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <b>costa-alta.com</b>
+          </div>
+          <video
+            id={`${id}-video`}
+            src="/work/costa-alta.mp4"
+            poster="/work/costa-alta.jpg"
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            width={960}
+            height={540}
+            aria-label="Recorrido por la web de muestra de una inmobiliaria"
+          />
+          <figcaption className="ag-credit" aria-live="polite">
+            Sitio hecho por <b>{name}</b>
+          </figcaption>
+        </figure>
+    </>
   );
 }

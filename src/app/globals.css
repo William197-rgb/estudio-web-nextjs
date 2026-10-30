@@ -228,6 +228,8 @@ a {
   text-decoration: none;
   margin-right: auto;
   line-height: 1.1;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .wordmark-mark {
@@ -282,7 +284,7 @@ a {
   font-size: 0.95rem;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1180px) {
   .site-nav {
     display: none;
   }
@@ -2267,7 +2269,7 @@ a {
 
 .ag-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   gap: clamp(36px, 4vw, 56px) clamp(40px, 5vw, 80px);
   align-items: start;
 }
@@ -2286,12 +2288,22 @@ a {
 }
 
 .ag-hero-copy .hero-actions {
-  margin-top: 8px;
+  margin-top: 0;
 }
 
-.ag-live {
-  display: grid;
-  gap: 20px;
+/* The controls sit under the actions as a tinted panel, so the left column carries the live part. */
+.ag-controls {
+  margin-top: 12px;
+  padding: 24px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--bg-2);
+}
+
+.ag-controls + .ag-dates {
+  margin-top: -28px;
+  padding: 0 24px 24px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--bg-2);
 }
 
 .ag-frame {
@@ -2352,13 +2364,18 @@ a {
 
 .ag-controls {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 16px;
 }
 
 .ag-dates {
-  max-width: 62ch;
   min-height: 3.2em;
+}
+
+.ag-controls input,
+.ag-controls select {
+  width: 100%;
+  min-width: 0;
 }
 
 .ag-dates b {
@@ -2470,6 +2487,33 @@ a {
   .ag-hero-grid,
   .ag-split {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* On one column the framed site goes right after the buttons, above the controls that change it. */
+  .ag-hero-copy {
+    display: contents;
+  }
+
+  .ag-hero-copy .hero-lede {
+    order: 1;
+  }
+
+  .ag-hero-copy .hero-actions {
+    order: 2;
+  }
+
+  .ag-frame {
+    order: 3;
+  }
+
+  .ag-controls {
+    order: 4;
+    margin-top: 0;
+  }
+
+  .ag-controls + .ag-dates {
+    order: 5;
+    margin-top: calc(-1 * clamp(36px, 4vw, 56px));
   }
 
   .ag-split .section-head {

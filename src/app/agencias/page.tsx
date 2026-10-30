@@ -46,7 +46,7 @@ export default function AgenciasPage() {
       <section className="ag-hero" aria-labelledby="ag-title">
         <div className="wrap ag-hero-grid">
           <h1 id="ag-title">Webs en marca blanca para agencias</h1>
-          <div className="ag-hero-copy">
+          <AgencyPreview>
             <p className="hero-lede">
               Ustedes venden la web con su marca. Yo la construyo por detrás, sin contacto con su cliente, y la entrego en
               5 a 7 días.
@@ -59,8 +59,7 @@ export default function AgenciasPage() {
                 Ver precios
               </a>
             </div>
-          </div>
-          <AgencyPreview />
+          </AgencyPreview>
         </div>
       </section>
 
