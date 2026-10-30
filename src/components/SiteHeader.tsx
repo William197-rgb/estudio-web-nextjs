@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SectionLink } from "@/components/SectionLink";
 import { OWNER } from "@/data/site";
 
 // Each audience keeps its own menu: on /agencias the links jump inside that page, so a visitor
@@ -29,7 +29,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="wrap">
-        <Link href={agency ? "/agencias" : "/"} className="wordmark">
+        <SectionLink href={agency ? "/agencias" : "/"} className="wordmark">
           <span className="wordmark-mark" aria-hidden="true">
             W
           </span>
@@ -37,17 +37,17 @@ export function SiteHeader() {
             <b>{OWNER}</b>
             <small>{agency ? "Webs en marca blanca para agencias" : "Páginas web para negocios"}</small>
           </span>
-        </Link>
+        </SectionLink>
         <nav className="site-nav" aria-label="Secciones">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href}>
+            <SectionLink key={item.href} href={item.href}>
               {item.label}
-            </Link>
+            </SectionLink>
           ))}
         </nav>
-        <Link href={agency ? "/agencias#contacto" : "/#contacto"} className="btn btn-wa">
+        <SectionLink href={agency ? "/agencias#contacto" : "/#contacto"} className="btn btn-wa">
           <span className="cta-long">Escribir por&nbsp;</span>WhatsApp
-        </Link>
+        </SectionLink>
       </div>
     </header>
   );

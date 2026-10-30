@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { HeroClock } from "@/components/HeroLive";
 import { HeroWall } from "@/components/HeroWall";
+import { SectionLink } from "@/components/SectionLink";
 
 // Rendered on the server; only the clock hydrates. The entrance and the drifting wall are CSS.
 export function Hero() {
@@ -17,12 +17,12 @@ export function Hero() {
             de encontrar en Google.
           </p>
           <div className="hero-actions">
-            <Link href="#contacto" className="btn btn-primary btn-arrow">
+            <SectionLink href="#contacto" className="btn btn-primary btn-arrow">
               Pedir mi propuesta
-            </Link>
-            <Link href="#ejemplos" className="btn btn-ghost">
+            </SectionLink>
+            <SectionLink href="#ejemplos" className="btn btn-ghost">
               Arme su web
-            </Link>
+            </SectionLink>
           </div>
           <HeroClock />
         </div>
